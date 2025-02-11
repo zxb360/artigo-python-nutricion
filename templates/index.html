@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricion AI</title>
+</head>
+<body>
+    <h1>Nutricion Intelligence</h1>
+    <section>
+        <p>
+            A intenção a princípio é ajudar com avalição nutricional basíca, mas é importante lembrar que apenas um nutricionista pode fazer um diagnóstico preciso e prescrever um plano alimentar adequado.
+            A ídeia é que você possa registrar os dados necessários para que possa orientar com base nas informações.
+        </p>
+    </section>
+    <form action="/dados" method="post">
+        <label for="dados">Dados pessoas: </label>
+        <input type="text" name="nome" id="nome" placeholder="Nome">
+        <input type="text" name="sexo" id="sexo" placeholder="Sexo">
+        <input type="number" name="altura" id="altura" placeholder="Altura">
+        <input type="number" name="peso" id="peso" placeholder="Peso">
+
+        <label for="habitos">Hábitos alimentares: </label>
+        <strong>Quantas refeições diária: </strong>
+        <select name="refeicoes" id="refeicoes">
+            <option value="1dias">Uma vez por dia</option>
+            <option value="2dias"> vez por dia</option>
+            <option value="1dias">Uma vez por dia</option>
+        </select>
+    </form>
+</body>
+</html>
