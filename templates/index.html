@@ -13,20 +13,16 @@
             A ídeia é que você possa registrar os dados necessários para que possa orientar com base nas informações.
         </p>
     </section>
-    <form action="/dados" method="post">
-        <label for="dados">Dados pessoas: </label>
-        <input type="text" name="nome" id="nome" placeholder="Nome">
-        <input type="text" name="sexo" id="sexo" placeholder="Sexo">
-        <input type="number" name="altura" id="altura" placeholder="Altura">
-        <input type="number" name="peso" id="peso" placeholder="Peso">
-
-        <label for="habitos">Hábitos alimentares: </label>
-        <strong>Quantas refeições diária: </strong>
-        <select name="refeicoes" id="refeicoes">
-            <option value="1dias">Uma vez por dia</option>
-            <option value="2dias"> vez por dia</option>
-            <option value="1dias">Uma vez por dia</option>
-        </select>
+    <form method="post">
+        <label for="input">Duvida: </label>
+        <input type="text" name="input" id="input" required>
+        <button type="submit">Enviando</button>
     </form>
+
+    {% if response %}
+        <section>
+            <strong>{{ response }}</strong>
+        </section>
+    {% endif %}
 </body>
 </html>
