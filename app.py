@@ -1,9 +1,10 @@
 import google.generativeai as genai
 import os
+from funcionalidades import calculo_imc
 from flask import Flask, render_template, request
 
-model = genai.GenerativeModel('gemini-pro',
-                              generation_config={"temperature": 0.5}
+model = genai.GenerativeModel('gemini-1.5-flash',
+                              generation_config={"temperature": 0.2}
                               )
 
 app = Flask(__name__)
@@ -15,9 +16,12 @@ genai.configure(api_key=GOOGLE_API_KEY)
 def home():
     response = None
     if request.method == "POST":
-        input = request.form['input']  # request.form.get('input')
-        if input:
-            response = generative_response(input)
+        user = calculo_imc(request.form.get('nome'),
+                           request.form.get('peso'),
+                           request.form.get('altura'))
+        # request.form.get('input')
+        if user:
+            response = generative_response(user)
     return render_template('index.html', response=response)
 
 
@@ -27,4 +31,4 @@ def generative_response(i):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8000, debug=True)
