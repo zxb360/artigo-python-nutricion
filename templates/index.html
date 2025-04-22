@@ -13,16 +13,88 @@
             A ídeia é que você possa registrar os dados necessários para que possa orientar com base nas informações.
         </p>
     </section>
-    <form method="post">
-        <input type="text" name="nome" id="input" placeholder="name" required>
-        <input type="number" name="peso" id="peso" placeholder="Peso (kg)" required>
-        <input type="number" name="altura" id="altura" step="any" placeholder="Altura (cm)" required>
+    <form method="POST" action="/">
+        <div>
+            <h2>Dados do Paciente</h2>
+            <input type="text" name="nome" id="input" placeholder="name" required>
+            <input type="number" name="peso" id="peso" placeholder="Peso (kg)" required>
+            <input type="number" name="altura" id="altura" step="any" placeholder="Altura (cm)" required>
+            <input type="number" name="idade" id="idade" placeholder="Idade (anos)" required>
+            <input type="text" name="sexo" id="sexo" placeholder="Sexo (M/F)" required>
+        </div>
+        <div>
+            <h2>Dados de Saúde</h2>
+            <select name="condicoes_medicas" id="condicoes_medicas">
+                <option value="diabetes">Diabetes</option>
+                <option value="hipertensao">Hipertensão</option>
+                <option value="cardiopatia">Doença Cardiovascular</option>
+                <option value="asma">Asma</option>
+                <option value="cancer">Câncer</option>
+                <option value="epilepsia">Epilepsia</option>
+                <option value="doenca_renal">Doença Renal Crônica</option>
+                <option value="hepatite">Hepatite</option>
+                <option value="hiv">HIV / AIDS</option>
+                <option value="alergias_graves">Alergias Graves</option>
+                <option value="colesterol_alto">Colesterol Alto</option>
+                <option value="condicao_saudavel">Nenhum</option>
+            </select>
+        </div>
+        <div>
+            <h2>Objetivo</h2>
+            <select name="objetivo" id="objetivo">
+                <option value="perde_peso">Perder Peso</option>
+                <option value="ganha_musculo">Ganhar massa muscular</option>
+                <option value="ganhar_peso">Ganhar Peso</option>
+                <option value="manter_peso">Manter Peso</option>
+                <option value="definir">Definir</option>
+                <option value="melhorar_performance">Melhorar Performance</option>
+                <option value="melhorar_saude">Melhorar Saúde</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        <div>
+            <h2>Preferencia Alimentar</h2>
+            <select name="preferencia_alimentar" id="preferencia_alimentar">
+                <option value="vegetariano">Vegetariano</option>
+                <option value="vegano">Vegano</option>
+                <option value="onivoro">Onívoro</option>
+                <option value="paleo">Paleo</option>
+                <option value="cetogenico">Cetogênico</option>
+                <option value="low_carb">Low Carb</option>
+                <option value="gluten_free">Gluten Free</option>
+                <option value="outra">outra</option>
+            </select> 
+        </div>
+        <div>
+            <h2>Atividade Física</h2>
+            <select name="atividade_fisica" id="atividade_fisica">
+                <option value="sedentario">Sedentário</option>
+                <option value="leve">Leve</option>
+                <option value="moderado">Moderado</option>
+                <option value="intenso">Intenso</option>
+            </select>
+            <h3>Conte quais são suas atividades durante a semana: </h3>
+            <textarea cols="30" rows="10" name="atividade" id="atividade"></textarea>
+        </div>
+        <div>
+            <h2>Café da manhã</h2>   
+            <h3>O que você gosta de comer no café da manhã, descreva habítos como rotina matinal.</h3>
+            <p>
+                Descreva o conditiano da sua semana e suas Preferencia, normalmente o que vocÊ come 
+                durante a semana e o que você come no final de semana.
+                atualmente nas possibilidades economicas.
+            </p>
+            <textarea name="cafe" id="cafe" cols="30" rows="10"></textarea>
+            <h2>Lanche da manhã</h2>   
+            <h3>O que você gosta de lanchar pela manhã, descreva habítos rotina matinal.</h3>
+            <textarea name="lanche" id="cafe" cols="30" rows="10"></textarea>
+        </div>
         <button type="submit">Enviando</button>
     </form>
 
     {% if response %}
         <section>
-            <strong>{{ response }}</strong>
+            <p>{{ response }}</p>
         </section>
     {% endif %}
 </body>
